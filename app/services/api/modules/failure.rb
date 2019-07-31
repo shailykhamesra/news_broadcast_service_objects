@@ -1,12 +1,8 @@
 module Api
   module Modules
     module Failure
-      def failure!
-        @failure = true
-      end
-
-      def failed?
-        @failure
+      def failure
+        @failure = 'Response could not be fetched'
       end
     end
   end

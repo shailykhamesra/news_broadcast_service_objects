@@ -19,10 +19,8 @@ module MyalliesBreakingNews
         response = response_on(fetch_news_information)
         response_body = JSON.parse(response.body)
         @api_response = response_body['Data']
-        @api_response
       rescue Faraday::ConnectionFailed, Faraday::TimeoutError, Faraday::SSLError => e
-        failure!
-        failed?
+        failure
       end
 
       private

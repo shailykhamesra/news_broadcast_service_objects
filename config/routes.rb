@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  get '/news' => 'news#fetch_news'
+  resources :news, only: %i[index]
 end
