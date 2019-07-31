@@ -18,7 +18,7 @@ module MyalliesBreakingNews
       def start
         @api_response = response_on(fetch_news_information)
         return ::MyalliesBreakingNews::Api::ResponseHandlers::NewsResponse.(@api_response)
-      rescue Faraday::ConnectionFailed, Faraday::TimeoutError, Faraday::SSLError => e
+      rescue => e
         failure
       end
 
