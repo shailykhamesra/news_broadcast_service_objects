@@ -19,7 +19,8 @@ module MyalliesBreakingNews
         @api_response = response_on(fetch_news_information)
         return ::MyalliesBreakingNews::Api::ResponseHandlers::NewsResponse.(@api_response)
       rescue => e
-        failure
+        connection_failed_log(e)
+        return ::MyalliesBreakingNews::Api::ResponseHandlers::ConnectionError.(error: e.message)
       end
 
       private

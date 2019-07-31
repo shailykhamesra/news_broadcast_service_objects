@@ -2,19 +2,24 @@ module MyalliesBreakingNews
   module Api
     module ResponseHandlers
       class ConnectionError
+
         def self.call(options = {})
           new(options).error
         end
 
-        attr_reader :model_obj
+        attr_reader :error
 
         def initialize(options = {})
-          @model_obj = options[:model_obj]
+          @error = options[:error]
         end
 
         def error
-          model_obj.fail!
-          model_obj
+          {
+            body: {
+              error: @error
+            },
+            status: :unprocessable_entity
+          }
         end
       end
     end
