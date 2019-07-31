@@ -3,7 +3,6 @@ module MyalliesBreakingNews
     class NewsInformation
       include ::MyalliesBreakingNews::Api::Modules::Connection
       include ::MyalliesBreakingNews::Api::Modules::Logs
-      include ::Api::Modules::Failure
 
       def self.call(options = {})
         new(options)
