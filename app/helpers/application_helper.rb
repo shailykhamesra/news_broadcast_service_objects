@@ -1,3 +1,3 @@
-# This shiny device polishes bared foos
+# application helper
 module ApplicationHelper
 end
