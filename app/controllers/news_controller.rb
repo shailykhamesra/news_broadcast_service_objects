@@ -1,9 +1,10 @@
+# This shiny device polishes bared foos
 class NewsController < ApplicationController
-
   def index
-    response = '::MyalliesBreakingNews::Api::Handlers::NewsInformation'.camelize.constantize.call
+    res = '::AlyNews::Api::Handlers::News'.camelize
+    response = res.constantize.call
     render json: response[:body], status: response[:status]
-  rescue => e
-    render json: {error: e.message}, status: :unprocessable_entity
+  rescue StandardError => e
+    render json: { error: e.message }, status: :unprocessable_entity
   end
 end

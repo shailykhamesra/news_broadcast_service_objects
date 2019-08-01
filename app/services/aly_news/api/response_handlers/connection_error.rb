@@ -1,8 +1,8 @@
-module MyalliesBreakingNews
+module AlyNews
   module Api
     module ResponseHandlers
+      # error handles calss
       class ConnectionError
-
         def self.call(options = {})
           new(options).error
         end

@@ -1,8 +1,8 @@
-module MyalliesBreakingNews
+module AlyNews
   module Api
     module ResponseHandlers
+      # response class
       class NewsResponse
-
         def self.call(response)
           initialized = new(response)
           response.status == 200 ? initialized.success : initialized.error

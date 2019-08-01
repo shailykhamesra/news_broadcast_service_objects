@@ -1,10 +1,10 @@
-module MyalliesBreakingNews
+module AlyNews
   module Api
     module Modules
+      # faraday connection
       module Connection
-
-        include ::MyalliesBreakingNews::Api::Modules::Requests::NewsInformation
-        include ::MyalliesBreakingNews::Api::Modules::Requests::Constants
+        include ::AlyNews::Api::Modules::Requests::News
+        include ::AlyNews::Api::Modules::Requests::Constants
 
         private
 

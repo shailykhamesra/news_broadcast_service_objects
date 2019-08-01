@@ -1,11 +1,11 @@
-module MyalliesBreakingNews
+module AlyNews
   module Api
     module Modules
       module Requests
-        module NewsInformation
+        module News
           class << self
-            include ::MyalliesBreakingNews::Api::Modules::Requests::Constants
-            def fetch_news_information
+            include ::AlyNews::Api::Modules::Requests::Constants
+            def fetch_news
               { url: URL, headers: { 'X-RapidAPI-Host': API_HOST, 'X-RapidAPI-Key': API_KEY } }
             end
           end

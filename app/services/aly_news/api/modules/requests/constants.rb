@@ -1,4 +1,4 @@
-module MyalliesBreakingNews
+module AlyNews
   module Api
     module Modules
       module Requests

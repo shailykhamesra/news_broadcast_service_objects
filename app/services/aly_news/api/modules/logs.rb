@@ -1,6 +1,7 @@
-module MyalliesBreakingNews
+module AlyNews
   module Api
     module Modules
+      # logs for connection error
       module Logs
         private
 
