@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module AlyNews
   module Api
     # News inofrmation fetching
@@ -17,11 +19,10 @@ module AlyNews
 
       def start
         api_response = response_on(fetch_news)
-        return ::AlyNews::Api::ResponseHandlers::NewsResponse.call(api_response)
+        ::AlyNews::Api::ResponseHandlers::NewsResponse.call(api_response)
       rescue Faraday::ConnectionFailed, Faraday::TimeoutError => e
         connection_failed_log(e)
-        er = e.message
-        return ::AlyNews::Api::ResponseHandlers::ConnectionError.call(error: er)
+        ::AlyNews::Api::ResponseHandlers::ConnectionError.call(error: e.message)
       end
 
       private

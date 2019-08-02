@@ -1,4 +1,5 @@
-# This shiny device polishes bared foos
+# frozen_string_literal: true
+
 class NewsController < ApplicationController
   def index
     res = '::AlyNews::Api::Handlers::News'.camelize

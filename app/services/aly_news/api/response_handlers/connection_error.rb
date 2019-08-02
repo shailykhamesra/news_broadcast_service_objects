@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 module AlyNews
   module Api
     module ResponseHandlers
       # error handles calss
       class ConnectionError
         def self.call(options = {})
-          new(options).error
+          new(options).run
         end
 
         attr_reader :error
@@ -13,7 +15,7 @@ module AlyNews
           @error = options[:error]
         end
 
-        def error
+        def run
           {
             body: {
               error: @error

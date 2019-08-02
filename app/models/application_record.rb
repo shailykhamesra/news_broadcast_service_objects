@@ -1,4 +1,5 @@
-# This shiny device polishes bared foos
+# frozen_string_literal: true
+
 class ApplicationRecord < ActiveRecord::Base
   self.abstract_class = true
 end
